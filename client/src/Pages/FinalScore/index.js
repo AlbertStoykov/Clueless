@@ -1,19 +1,19 @@
-import React from 'react';
-import { Button, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { handleAmountChange, handleScoreChange } from '../../actions/index.js';
+import React from "react";
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { handleNumChange, handleScoreChange } from "../../actions/index.js";
 
 const FinalScore = () => {
-  const disptach = useDispatch();
-  const history = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { score } = useSelector((state) => state);
 
   const handleBackToQuizSetUp = () => {
-    disptach(handleScoreChange(0));
-    disptach(handleAmountChange(50));
-    history.push;
+    dispatch(handleScoreChange(0));
+    dispatch(handleNumChange(50));
+    navigate("/");
   };
 
   return (
@@ -22,7 +22,7 @@ const FinalScore = () => {
         Final Score {score}
       </Typography>
       <Button onClick={handleBackToQuizSetUp} variant="outlined">
-        back to settings!
+        BACK
       </Button>
     </Box>
   );
