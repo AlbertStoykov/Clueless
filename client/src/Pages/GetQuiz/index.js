@@ -7,6 +7,8 @@ const handleClickAnswer = (e) => {
   if (questionIndex + 1 < response.results.length) {
     setQuestionIndex(questionIndex + 1);
   } else {
-    history.push('/score');
+    history.push("/score");
   }
 };
+
+export default handleClickAnswer;
