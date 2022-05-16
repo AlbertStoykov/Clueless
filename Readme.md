@@ -19,6 +19,7 @@ Users are then able to view a high scores list.
 - HTML/CSS
 - MongoDB atlas
 - React Js
+- Postman
 
 ## Usage
 
