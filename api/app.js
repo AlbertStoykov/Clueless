@@ -9,6 +9,6 @@ const usersRoutes = require('./routes/users');
 
 app.use('/users', usersRoutes);
 
-app.get('/', (req, res) => res.send('Welcome to Trivia Arena!'));
+app.get('/', (req, res) => res.send('Welcome to Clueless!'));
 
 module.exports = app;

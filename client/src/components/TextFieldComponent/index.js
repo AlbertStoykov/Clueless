@@ -1,10 +1,9 @@
 import React from 'react';
+import { Box } from '@mui/system';
+import { FormControl, TextField } from '@mui/material';
 
 const TextFieldComponent = () => {
-  const dispatch = useDispatch();
-  const handleChange = (e) => {
-    dispatch(handleAmountChange(e.target.value));
-  };
+  const handleChange = () => {};
 
   return (
     <Box mt={3} width="100%">

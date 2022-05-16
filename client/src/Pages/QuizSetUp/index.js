@@ -1,9 +1,12 @@
-import { Typography, Button } from '@mui/material';
+import { Typography, Button, FromGroup } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { SelectField } from '../../components';
+import { SelectField, TextFieldComponent } from '../../components';
+import { useAxios } from '../../hooks';
 
-const QuizSetUp = () => {
+const QuizSetup = () => {
+  const { response, error, loading } = useAxios({ url: '/api_category.php' });
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -13,12 +16,13 @@ const QuizSetUp = () => {
       <Typography variant="h3" fontWeight="Bold">
         Quiz App
       </Typography>
-      <form onSumbit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <SelectField label="Category" />
         <SelectField label="Difficulty" />
         <SelectField label="Type" />
+        <TextFieldComponent />
         <Box mt={3} width="100%">
-          <Button fullWidth varient="contained" type="submit">
+          <Button fullWidth variant="contained" type="submit">
             Get Started
           </Button>
         </Box>
@@ -27,4 +31,4 @@ const QuizSetUp = () => {
   );
 };
 
-export default QuizSetUp;
+export default QuizSetup;
