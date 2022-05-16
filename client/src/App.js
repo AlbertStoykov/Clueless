@@ -2,8 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import QuizSetup from "./Pages/QuizSetup";
 // import GetQuiz from './Pages/GetQuiz';
+
+import Navbar from './Layout/Header/NavBar/NavBar';
 import FinalScore from "./Pages/FinalScore";
 import Questions from "./Pages/Questions";
+
 
 function App() {
   return (
