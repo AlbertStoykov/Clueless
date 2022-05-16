@@ -7,6 +7,7 @@ import {
   handleNumChange,
   handleDifficultyChange,
   handleTypeChange,
+  handleScoreChange,
 } from "../../actions";
 
 const SelectField = (props) => {
@@ -27,7 +28,10 @@ const SelectField = (props) => {
       case "Type":
         dispatch(handleTypeChange(e.target.value));
         break;
-      case "Category":
+      case "Score":
+        dispatch(handleScoreChange(e.target.value));
+        break;
+      case "Number":
         dispatch(handleNumChange(e.target.value));
         break;
       default:
