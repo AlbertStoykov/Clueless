@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { SelectField } from "../../components";
 import { useAxios } from "../../hooks";
+import TextComp from "../../components/TextComp";
+
+import { DifficultyOptions, TypeOptions } from "../../container";
 
 const QuizSetup = () => {
   const { response, error, loading } = useAxios({ url: "/api_category.php" });
@@ -25,25 +28,6 @@ const QuizSetup = () => {
     );
   }
 
-  const difficultyOptions = [
-    { id: "easy", name: "Easy" },
-    { id: "medium", name: "Medium" },
-    { id: "hard", name: "Hard" },
-  ];
-
-  const typeOptions = [
-    { id: "multiple", name: "Multiple Choice" },
-    { id: "boolean", name: "True/False" },
-  ];
-
-  const questionOptions = [
-    { id: "1", name: "1" },
-    { id: "2", name: "2" },
-    { id: "3", name: "3" },
-    { id: "4", name: "4" },
-    { id: "5", name: "5" },
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/questions");
@@ -56,9 +40,9 @@ const QuizSetup = () => {
       </Typography>
       <form onSubmit={handleSubmit}>
         <SelectField options={response.trivia_categories} label="Category" />
-        <SelectField options={difficultyOptions} label="Difficulty" />
-        <SelectField options={typeOptions} label="Type" />
-        <SelectField options={questionOptions} label="Number of Questions" />
+        <SelectField options={DifficultyOptions} label="Difficulty" />
+        <SelectField options={TypeOptions} label="Type" />
+        <TextComp />
         <Box mt={3} width="100%">
           <Button fullWidth variant="contained" type="submit">
             Start Quiz
