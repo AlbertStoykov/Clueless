@@ -4,7 +4,6 @@ import {
   CHANGE_TYPE,
   CHANGE_NUM,
   CHANGE_SCORE,
-  CHANGE_PLAYER,
 } from "../reducers/actionTypes";
 
 export const handleCategoryChange = (payload) => ({
@@ -21,10 +20,6 @@ export const handleTypeChange = (payload) => ({
 });
 export const handleNumChange = (payload) => ({
   type: CHANGE_NUM,
-  payload,
-});
-export const handlePlayerChange = (payload) => ({
-  type: CHANGE_PLAYER,
   payload,
 });
 
