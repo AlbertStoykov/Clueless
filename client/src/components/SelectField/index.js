@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   handleCategoryChange,
-  handleNumChange,
   handleAmountChange,
   handleDifficultyChange,
   handleTypeChange,
@@ -44,7 +43,7 @@ const SelectField = (props) => {
     <Box mt={3} width="100%">
       <FormControl size="small" fullWidth>
         <InputLabel>{label}</InputLabel>
-        <Select value={value} label={label} onChange={handleChange}>
+        <Select required value={value} label={label} onChange={handleChange}>
           {options.map(({ id, name }) => (
             <MenuItem value={id} key={id}>
               {name}

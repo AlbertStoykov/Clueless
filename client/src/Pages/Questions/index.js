@@ -75,20 +75,59 @@ const Questions = () => {
   };
 
   return (
-    <Box>
+    <Box
+      style={{
+        backgroundColor: "#202124",
+        borderRadius: "15px",
+      }}
+    >
       <UserTab />
-      <Typography variant="h4">Question {questionIndex + 1}</Typography>
-      <Typography mt={5}>
+      <Typography
+        style={{
+          backgroundColor: "red",
+          borderRadius: "10px",
+          textAlign: "center",
+          color: "white",
+          textDecoration: "underline",
+        }}
+        variant="h4"
+        mt={6}
+      >
+        Question {questionIndex + 1}
+      </Typography>
+
+      <Typography
+        mt={5}
+        style={{
+          color: "white",
+        }}
+      >
         {htmlDecode(response.results[questionIndex].question)}
       </Typography>
+
       {options.map((data, id) => (
         <Box mt={2} key={id}>
-          <Button onClick={handleClickAnswer} variant="contained">
+          <Button
+            onClick={handleClickAnswer}
+            variant="contained"
+            style={{
+              minWidth: "400px",
+              minHeight: "30px",
+            }}
+          >
             {htmlDecode(data)}
           </Button>
         </Box>
       ))}
-      <Box mt={5}>
+
+      <Box
+        mt={5}
+        fontSize={50}
+        style={{
+          color: "white",
+          fontFamily: "Roboto, Helvetica",
+        }}
+      >
         Score: {score} / {response.results.length}
       </Box>
     </Box>

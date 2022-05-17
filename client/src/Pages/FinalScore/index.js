@@ -10,7 +10,7 @@ const FinalScore = () => {
   const navigate = useNavigate();
   const { score } = useSelector((state) => state);
 
-  const handleBackToQuizSetUp = () => {
+  const handleBackToQuizSetup = () => {
     dispatch(handleScoreChange(0));
     dispatch(handleAmountChange(50));
     navigate("/");
@@ -21,7 +21,7 @@ const FinalScore = () => {
       <Typography variant="h3" fontWeight="bold" mb={3}>
         Final Score {score}
       </Typography>
-      <Button onClick={handleBackToQuizSetUp} variant="outlined">
+      <Button onClick={handleBackToQuizSetup} variant="outlined">
         BACK
       </Button>
     </Box>
