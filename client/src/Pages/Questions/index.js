@@ -5,10 +5,18 @@ import { useAxios } from "../../hooks";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { handleScoreChange } from "../../actions";
+import { UserTab } from "../../components";
 
+//creates a random number
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
+
+//Function handling special HTML characters
+function htmlDecode(input) {
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent;
+}
 
 const Questions = () => {
   const { question_cat, question_dif, question_type, question_num, score } =
@@ -39,6 +47,7 @@ const Questions = () => {
       const question = response.results[questionIndex];
       let answers = [...question.incorrect_answers];
       answers.splice(
+        //creates a random index for incorrect answers
         getRandomInt(question.incorrect_answers.length),
         0,
         question.correct_answer
@@ -69,12 +78,15 @@ const Questions = () => {
 
   return (
     <Box>
+      <UserTab />
       <Typography variant="h4">Question {questionIndex + 1}</Typography>
-      <Typography mt={5}>{response.results[questionIndex].question}</Typography>
+      <Typography mt={5}>
+        {htmlDecode(response.results[questionIndex].question)}
+      </Typography>
       {options.map((data, id) => (
         <Box mt={2} key={id}>
           <Button onClick={handleClickAnswer} variant="contained">
-            {data}
+            {htmlDecode(data)}
           </Button>
         </Box>
       ))}
