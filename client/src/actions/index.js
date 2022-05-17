@@ -2,7 +2,7 @@ import {
   CHANGE_CATEGORY,
   CHANGE_DIFFICULTY,
   CHANGE_TYPE,
-  CHANGE_NUM,
+  CHANGE_AMOUNT,
   CHANGE_SCORE,
 } from "../reducers/actionTypes";
 
@@ -18,8 +18,8 @@ export const handleTypeChange = (payload) => ({
   type: CHANGE_TYPE,
   payload,
 });
-export const handleNumChange = (payload) => ({
-  type: CHANGE_NUM,
+export const handleAmountChange = (payload) => ({
+  type: CHANGE_AMOUNT,
   payload,
 });
 

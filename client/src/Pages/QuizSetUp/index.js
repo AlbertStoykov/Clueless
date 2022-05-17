@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { SelectField } from "../../components";
 import { useAxios } from "../../hooks";
-import {
-  QuestionOptions,
-  DifficultyOptions,
-  TypeOptions,
-} from "../../container";
+import TextComp from "../../components/TextComp";
+
+import { DifficultyOptions, TypeOptions } from "../../container";
 
 const QuizSetup = () => {
   const { response, error, loading } = useAxios({ url: "/api_category.php" });
@@ -44,7 +42,7 @@ const QuizSetup = () => {
         <SelectField options={response.trivia_categories} label="Category" />
         <SelectField options={DifficultyOptions} label="Difficulty" />
         <SelectField options={TypeOptions} label="Type" />
-        <SelectField options={QuestionOptions} label="Questions" />
+        <TextComp />
         <Box mt={3} width="100%">
           <Button fullWidth variant="contained" type="submit">
             Start Quiz

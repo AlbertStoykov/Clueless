@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   handleCategoryChange,
   handleNumChange,
+  handleAmountChange,
   handleDifficultyChange,
   handleTypeChange,
   handleScoreChange,
@@ -31,8 +32,8 @@ const SelectField = (props) => {
       case "Score":
         dispatch(handleScoreChange(e.target.value));
         break;
-      case "Number":
-        dispatch(handleNumChange(e.target.value));
+      case "Amount":
+        dispatch(handleAmountChange(e.target.value));
         break;
       default:
         return;

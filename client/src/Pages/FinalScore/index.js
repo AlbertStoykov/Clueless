@@ -3,7 +3,7 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { handleNumChange, handleScoreChange } from "../../actions/index.js";
+import { handleAmountChange, handleScoreChange } from "../../actions";
 
 const FinalScore = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const FinalScore = () => {
 
   const handleBackToQuizSetUp = () => {
     dispatch(handleScoreChange(0));
-    dispatch(handleNumChange(50));
+    dispatch(handleAmountChange(50));
     navigate("/");
   };
 

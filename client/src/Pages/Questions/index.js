@@ -19,15 +19,13 @@ function htmlDecode(input) {
 }
 
 const Questions = () => {
-  const { question_cat, question_dif, question_type, question_num, score } =
+  const { question_cat, question_dif, question_type, amount, score } =
     useSelector((state) => state);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  let apiUrl = `/api.php`;
-  if (question_num) {
-    apiUrl = apiUrl.concat(`?amount=${question_num}`);
-  }
+  let apiUrl = `/api.php?amount=${amount}`;
+
   if (question_cat) {
     apiUrl = apiUrl.concat(`&category=${question_cat}`);
   }

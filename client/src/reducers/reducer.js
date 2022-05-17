@@ -2,7 +2,7 @@ import {
   CHANGE_CATEGORY,
   CHANGE_DIFFICULTY,
   CHANGE_TYPE,
-  CHANGE_NUM,
+  CHANGE_AMOUNT,
   CHANGE_SCORE,
 } from "./actionTypes";
 
@@ -10,7 +10,7 @@ const initialState = {
   question_cat: "",
   question_dif: "",
   question_type: "",
-  question_num: 3,
+  amount: 3,
   score: 0,
 };
 
@@ -31,10 +31,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         question_type: action.payload,
       };
-    case CHANGE_NUM:
+    case CHANGE_AMOUNT:
       return {
         ...state,
-        question_num: action.payload,
+        amount: action.payload,
       };
     case CHANGE_SCORE:
       return {
