@@ -35,6 +35,7 @@ const QuizSetup = () => {
 
   return (
     <Box
+      role="box"
       mt={12}
       style={{
         border: "2px solid #36BC4D",

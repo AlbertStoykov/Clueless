@@ -76,6 +76,7 @@ const Questions = () => {
   };
 
   return (
+    // Box
     <Box
       role="question"
       mt={12}
@@ -86,6 +87,7 @@ const Questions = () => {
         padding: "20px",
       }}
     >
+      {/* Question Number */}
       <UserTab />
       <Typography
         style={{
@@ -104,6 +106,7 @@ const Questions = () => {
         Question {questionIndex + 1}
       </Typography>
 
+      {/* Question Bubble */}
       <Typography
         mt={5}
         style={{
@@ -121,6 +124,7 @@ const Questions = () => {
         {htmlDecode(response.results[questionIndex].question)}
       </Typography>
 
+      {/* Answer */}
       {options.map((data, id) => (
         <Box mt={2} mb={2} key={id}>
           <Button
@@ -137,6 +141,7 @@ const Questions = () => {
         </Box>
       ))}
 
+      {/* Score */}
       <Box
         mt={5}
         fontSize={50}
