@@ -76,6 +76,7 @@ const Questions = () => {
 
   return (
     <Box
+      mt={12}
       style={{
         backgroundColor: "#202124",
         borderRadius: "15px",
