@@ -53,6 +53,7 @@ const Questions = () => {
       setOptions(answers);
     }
   }, [response, questionIndex]);
+
   if (loading) {
     return (
       <Box mt={20}>
@@ -76,6 +77,7 @@ const Questions = () => {
 
   return (
     <Box
+      role="question"
       mt={12}
       style={{
         backgroundColor: "#202124",
