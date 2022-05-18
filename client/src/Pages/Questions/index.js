@@ -80,21 +80,26 @@ const Questions = () => {
       role="question"
       mt={12}
       style={{
-        backgroundColor: "#202124",
+        border: "2px solid #36BC4D",
+        boxShadow: "3px 1px 3px 1px #36BC4D",
         borderRadius: "15px",
+        padding: "20px",
       }}
     >
       <UserTab />
       <Typography
         style={{
-          backgroundColor: "red",
+          backgroundColor: "#F6C400",
           borderRadius: "10px",
-          textAlign: "center",
-          color: "white",
+          width: "300px",
+          maxWidth: "100%",
+          padding: "3px",
+          margin: "0 auto",
+          color: "black",
           textDecoration: "underline",
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
         }}
         variant="h4"
-        mt={6}
       >
         Question {questionIndex + 1}
       </Typography>
@@ -102,19 +107,28 @@ const Questions = () => {
       <Typography
         mt={5}
         style={{
+          backgroundColor: "#E03033",
+          borderRadius: "10px",
+          minHeight: "30px",
+          width: "500px",
+          maxWidth: "100%",
+          padding: "5px",
+          margin: "10px auto",
           color: "white",
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
         }}
       >
         {htmlDecode(response.results[questionIndex].question)}
       </Typography>
 
       {options.map((data, id) => (
-        <Box mt={2} key={id}>
+        <Box mt={2} mb={2} key={id}>
           <Button
             onClick={handleClickAnswer}
             variant="contained"
             style={{
-              minWidth: "400px",
+              width: "400px",
+              maxWidth: "100%",
               minHeight: "30px",
             }}
           >
@@ -127,8 +141,15 @@ const Questions = () => {
         mt={5}
         fontSize={50}
         style={{
-          color: "white",
+          backgroundColor: "#F6C400",
+          borderRadius: "10px",
+          width: "300px",
+          maxWidth: "100%",
+          padding: "3px",
+          margin: "0 auto",
+          color: "black",
           fontFamily: "Roboto, Helvetica",
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
         }}
       >
         Score: {score} / {response.results.length}
