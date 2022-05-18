@@ -4,38 +4,31 @@ import { Provider } from "react-redux";
 import store from "../../store";
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock("../../hooks", () => ({
-  useAxios: () => ({ state: "mocked_value" }),
-}));
+import { useAxios } from "../../hooks"; // Get the hook that needs faking
+jest.mock("../../hooks"); // Fake the hooks
 
-jest.mock("axios");
-import axios from "axios";
-axios.get.mockResolvedValue({
-  data: {
-    response_code: 0,
+// Example response data
+
+const mockReturnData = {
+  response: {
     results: [
       {
-        category: "Entertainment: Books",
-        type: "multiple",
-        difficulty: "easy",
         question: "How many Harry Potter books are there?",
-        correct_answer: "7",
-        incorrect_answers: ["8", "5", "6"],
-      },
-      {
-        category: "Animals",
-        type: "multiple",
-        difficulty: "easy",
-        question: "How many teeth does an adult rabbit have?",
-        correct_answer: "28",
-        incorrect_answers: ["30", "26", "24"],
+        correct_answer: "C",
+        incorrect_answers: ["A", "B"],
       },
     ],
   },
-});
+  error: "",
+  loading: false,
+};
 
 describe("Questions", () => {
-  test("it renders", async () => {
+  beforeEach(() => {
+    // When useAxios is called, fake the response
+    useAxios.mockReturnValue(mockReturnData);
+
+    // Make the element
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -43,7 +36,16 @@ describe("Questions", () => {
         </MemoryRouter>
       </Provider>
     );
-    const role = await screen.getByRole("question");
-    expect(role.textContent).toMatch(/question/i);
+  });
+
+  test("it renders", () => {
+    // Does it display the right element?
+    const question = screen.getByRole("question");
+    expect(question).toBeInTheDocument();
+  });
+
+  test("it uses Axios", () => {
+    // Does it call useAxios?
+    expect(useAxios).toHaveBeenCalled();
   });
 });
