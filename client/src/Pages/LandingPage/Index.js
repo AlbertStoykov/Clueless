@@ -16,7 +16,7 @@ import { Box, height } from '@mui/system';
 
 const LandingPage = () => {
   return (
-    <>
+    <Box role="landing-page">
       {/* <CssBaseline /> */}
       <AppBar
         sx={{
@@ -109,7 +109,7 @@ const LandingPage = () => {
           </Container>
         </div>
       </main>
-    </>
+    </Box>
   );
 };
 
