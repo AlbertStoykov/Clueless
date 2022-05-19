@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Typography,
   Card,
@@ -10,17 +10,17 @@ import {
   Toolbar,
   Container,
   AppBar,
-} from '@mui/material';
-import { Box, height } from '@mui/system';
+} from "@mui/material";
+import { Box, height } from "@mui/system";
 
 const LandingPage = () => {
   return (
-    <>
+    <Box role="landing-page">
       {/* <CssBaseline /> */}
       <AppBar
         sx={{
-          position: 'absolute',
-          background: 'purple',
+          position: "absolute",
+          background: "purple",
         }}
       >
         <Toolbar>
@@ -31,7 +31,7 @@ const LandingPage = () => {
       </AppBar>
       <main>
         <div>
-          <Container sx={{ padding: '80px' }}>
+          <Container sx={{ padding: "80px" }}>
             <Box
               component="img"
               sx={{
@@ -46,12 +46,12 @@ const LandingPage = () => {
 
             <Box
               sx={{
-                backgroundImage: `url(${'assets/images/jason-leung.jpg'})`,
-                position: 'absolute',
-                right: '0px',
-                left: '0px',
-                height: '400px',
-                width: '100vw',
+                backgroundImage: `url(${"assets/images/jason-leung.jpg"})`,
+                position: "absolute",
+                right: "0px",
+                left: "0px",
+                height: "400px",
+                width: "100vw",
               }}
             >
               <Typography
@@ -60,7 +60,7 @@ const LandingPage = () => {
                 align="center"
                 color="white"
                 paragraph
-                padding={'50px'}
+                padding={"50px"}
               >
                 Game rules
               </Typography>
@@ -69,7 +69,7 @@ const LandingPage = () => {
                 align="center"
                 color="white"
                 paragraph
-                padding={'10px'}
+                padding={"10px"}
               >
                 1. No cheating
               </Typography>
@@ -78,7 +78,7 @@ const LandingPage = () => {
                 align="center"
                 color="white"
                 paragraph
-                padding={'10px'}
+                padding={"10px"}
               >
                 2. Loser Drinks
               </Typography>
@@ -87,7 +87,7 @@ const LandingPage = () => {
                 align="center"
                 color="white"
                 paragraph
-                padding={'10px'}
+                padding={"10px"}
               >
                 3. Answer within the timer
               </Typography>
@@ -95,7 +95,7 @@ const LandingPage = () => {
           </Container>
         </div>
       </main>
-    </>
+    </Box>
   );
 };
 
