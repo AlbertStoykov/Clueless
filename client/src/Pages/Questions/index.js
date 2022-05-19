@@ -78,7 +78,7 @@ const Questions = () => {
   return (
     // Box
     <Box
-      role="question"
+      role="question-box"
       mt={12}
       style={{
         border: "2px solid #36BC4D",
@@ -90,6 +90,7 @@ const Questions = () => {
       {/* Question Number */}
       <UserTab />
       <Typography
+        role="question-title"
         style={{
           backgroundColor: "#F6C400",
           borderRadius: "10px",
@@ -108,6 +109,7 @@ const Questions = () => {
 
       {/* Question Bubble */}
       <Typography
+        role="api-question"
         mt={5}
         style={{
           backgroundColor: "#E03033",
@@ -126,7 +128,7 @@ const Questions = () => {
 
       {/* Answer */}
       {options.map((data, id) => (
-        <Box mt={2} mb={2} key={id}>
+        <Box role="api-answer" mt={2} mb={2} key={id}>
           <Button
             onClick={handleClickAnswer}
             variant="contained"
