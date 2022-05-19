@@ -2,7 +2,7 @@
 
 ### Lap-3- Quiz React Project
 
-# An Quiz App for Parties
+# A Quiz App for Parties
 
 A Trivia-Quiz application that allows Users start a game with a limited number of players. They are able to choose difficulty level and topic for their quiz game. Players are able to answer trivia questions in turns and after a set number of turns a winner is declared. Scores are stored in a database at the end of the game.
 Users are then able to view a high scores list.
