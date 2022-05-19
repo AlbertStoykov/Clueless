@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import {
   QuizSetup,
   GetQuiz,
@@ -8,7 +8,7 @@ import {
   NotFoundPage,
   LandingPage,
   GameRoom,
-} from "./Pages";
+} from './pages';
 
 function App() {
   return (
