@@ -145,6 +145,7 @@ const Questions = () => {
 
       {/* Score */}
       <Box
+        role="api-score"
         mt={5}
         fontSize={50}
         style={{

@@ -59,6 +59,11 @@ describe("Questions", () => {
     expect.arrayContaining(answer);
   });
 
+  test("it renders a Score", () => {
+    const apiScore = screen.getByRole("api-score");
+    expect(apiScore).toBeInTheDocument();
+  });
+
   test("it uses Axios", () => {
     // Does it call useAxios?
     expect(useAxios).toHaveBeenCalled();
