@@ -40,7 +40,7 @@ const SelectField = (props) => {
   };
 
   return (
-    <Box mt={3} width="100%">
+    <Box role="selectfield" mt={3} width="100%">
       <FormControl size="small" fullWidth>
         <InputLabel>{label}</InputLabel>
         <Select required value={value} label={label} onChange={handleChange}>

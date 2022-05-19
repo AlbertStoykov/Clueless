@@ -11,7 +11,7 @@ const TextComp = () => {
   };
 
   return (
-    <Box mt={3} width="100%">
+    <Box role="textcomp" mt={3} width="100%">
       <FormControl fullWidth size="small">
         <TextField
           required

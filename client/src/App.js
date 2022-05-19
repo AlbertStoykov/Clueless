@@ -1,14 +1,13 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import {
   QuizSetup,
-  GetQuiz,
   Questions,
   FinalScore,
   NotFoundPage,
   LandingPage,
   GameRoom,
-} from './pages';
+} from "./pages";
 
 function App() {
   return (

@@ -20,4 +20,9 @@ describe("FinalScore Page", () => {
     const page = screen.getByTestId("final-score");
     expect(page).toBeInTheDocument();
   });
+
+  test("it displays the Back Button", () => {
+    const button = screen.getByText("BACK");
+    expect(button).toBeInTheDocument();
+  });
 });
