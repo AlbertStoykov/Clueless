@@ -13,7 +13,7 @@ const UserTab = (props) => {
   const [value, setValue] = useState("");
 
   return (
-    <Box mt={3} width="100%">
+    <Box role="usertab-page" mt={3} width="100%">
       <FormControl size="large">{players}</FormControl>
     </Box>
 
