@@ -18,6 +18,7 @@ import { ThemeProvider } from '@emotion/react';
 import { pink } from '@mui/material/colors';
 import { deepOrange } from '@mui/material/colors';
 import { shadows } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const theme = createTheme({
@@ -58,7 +59,7 @@ const LandingPage = () => {
           }}
         >
           <Toolbar>
-            <Typography variant="h6" color="white" align="centre">
+            <Typography variant="h6" color="white" align="center">
               Clueless
             </Typography>
           </Toolbar>
@@ -138,7 +139,8 @@ const LandingPage = () => {
                       boxShadow: 10,
                     }}
                   >
-                    <Link to={'/quizsetup'}><Typography> Let The Games Begin</Typography>
+                    <Link to={'/quizsetup'}>
+                      <Typography> Let The Games Begin</Typography>
                     </Link>
                   </Button>
                 </ThemeProvider>
