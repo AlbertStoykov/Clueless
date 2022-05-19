@@ -138,7 +138,8 @@ const LandingPage = () => {
                       boxShadow: 10,
                     }}
                   >
-                    <Typography> Let The Games Begin</Typography>
+                    <Link to={'/quizsetup'}><Typography> Let The Games Begin</Typography>
+                    </Link>
                   </Button>
                 </ThemeProvider>
               </Box>
