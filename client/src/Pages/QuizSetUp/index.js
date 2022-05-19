@@ -34,7 +34,17 @@ const QuizSetup = () => {
   };
 
   return (
-    <>
+    <Box
+      role="box"
+      mt={12}
+      style={{
+        border: "2px solid #36BC4D",
+        boxShadow: "3px 1px 3px 1px #36BC4D",
+        borderRadius: "15px",
+        padding: "25px",
+        borderRadius: "15px",
+      }}
+    >
       <Typography variant="h3" fontWeight="Bold">
         Clueless
       </Typography>
@@ -49,7 +59,7 @@ const QuizSetup = () => {
           </Button>
         </Box>
       </form>
-    </>
+    </Box>
   );
 };
 

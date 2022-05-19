@@ -9,16 +9,16 @@ import { Box } from "@mui/system";
 import App from "./App";
 
 reactDom.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Container maxWidth="sm">
       <Box textAlign="center" mt={5}>
         <Router>
-          <Provider store={store}>
+          <React.StrictMode>
             <App />
-          </Provider>
+          </React.StrictMode>
         </Router>
       </Box>
     </Container>
-  </React.StrictMode>,
+  </Provider>,
   document.querySelector("#root")
 );

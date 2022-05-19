@@ -18,7 +18,12 @@ const FinalScore = () => {
 
   return (
     <Box mt={30}>
-      <Typography variant="h3" fontWeight="bold" mb={3}>
+      <Typography
+        variant="h3"
+        fontWeight="bold"
+        mb={3}
+        data-testid="final-score"
+      >
         Final Score {score}
       </Typography>
       <Button onClick={handleBackToQuizSetup} variant="outlined">
