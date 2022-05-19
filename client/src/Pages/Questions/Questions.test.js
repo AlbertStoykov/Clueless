@@ -40,31 +40,11 @@ describe('Questions', () => {
 
   test('it renders', () => {
     // Does it display the right element?
-    const question = screen.getByRole("question-box");
+    const question = screen.getByRole('question');
     expect(question).toBeInTheDocument();
   });
 
-  test("it renders a Question Title", () => {
-    const question = screen.getByRole("question-title");
-    expect(question).toBeInTheDocument();
-  });
-
-  test("it renders a Question from the API", () => {
-    const apiQuestion = screen.getByRole("api-question");
-    expect(apiQuestion).toBeInTheDocument();
-  });
-
-  test("it renders Answers from API", () => {
-    const answer = screen.getAllByRole("api-answer");
-    expect.arrayContaining(answer);
-  });
-
-  test("it renders a Score", () => {
-    const apiScore = screen.getByRole("api-score");
-    expect(apiScore).toBeInTheDocument();
-  });
-
-  test("it uses Axios", () => {
+  test('it uses Axios', () => {
     // Does it call useAxios?
     expect(useAxios).toHaveBeenCalled();
   });
